@@ -7,8 +7,8 @@ function App() {
   let [loading, setLoading] = useState(true);
   let [open, setOpen] = useState(false);
   useEffect(() => {
+    console.log('Source code for nerds', 'https://github.com/sshh12/is-halal-bros-open')
     fetch("https://n.sshh.io/halalbros").then(resp => resp.json()).then(halalStatus => {
-      console.log(halalStatus);
       let guadStatus = halalStatus.find(h => h.street_address === '2712 Guadalupe St');
       setOpen(!guadStatus.offline)
       setLoading(false);
